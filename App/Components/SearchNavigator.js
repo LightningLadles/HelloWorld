@@ -24,6 +24,7 @@ import GuideInboxScreen from './GuideInboxScreen';
 import MapScreen from './MapScreen';
 import GuideChatScreen from './GuideChatScreen';
 // import CardFormScreen from './CardFormScreen';
+import NewChatScreen from './NewChatScreen';
 
 
 const SearchNavigator = StackNavigator({
@@ -53,7 +54,8 @@ const SearchNavigator = StackNavigator({
   ProfileScreen: {screen: ProfileScreen},
   GuideInbox: {screen: GuideInboxScreen},
   MapScreen: {screen: MapScreen},
-  GuideChat: {screen: GuideChatScreen}
+  GuideChat: {screen: GuideChatScreen},
+  NewChatScreen: {screen: NewChatScreen},
 });
 
 export default SearchNavigator;
