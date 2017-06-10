@@ -16,7 +16,6 @@ class NewConversation extends Component {
   }
 
   render() {
-    console.log('FUXK', this.props);
     const { navigate } = this.props.navigation;
     let nameToShow;
     let me;

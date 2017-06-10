@@ -46,8 +46,8 @@ class NewInboxScreen extends Component {
         // Iterate through rest of chats to pick out chats where this combination of 2 users is met.
         // let i = 0;
         // console.log('chatsToSlice', chatsToSlice);
-        for (let i = 0; i< chatsToSlice.length; i++) {
-          if (chatsToSlice[i].user.facebook_id === user1 && chatsToSlice[i].guide.user.facebook_id === user2) {
+        for (let i = 0; i < chatsToSlice.length; i++) {
+          if ((chatsToSlice[i].user.facebook_id === user1 && chatsToSlice[i].guide.user.facebook_id === user2) || (chatsToSlice[i].user.facebook_id === user2 && chatsToSlice[i].guide.user.facebook_id === user1)) {
             conversation.push(chatsToSlice[i]);
             chatsToSlice.splice(i, 1);
             i--;
