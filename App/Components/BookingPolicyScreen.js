@@ -1,10 +1,9 @@
 import React from 'react';
 import { Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import { PricingCard, Card, Button } from 'react-native-elements';
-import axios from '../axios.js';
+import { PricingCard, Card } from 'react-native-elements';
 import stripe from 'tipsi-stripe';
-import testID from '../Utils/testID';
+import axios from '../axios.js';
 import { STRIPE_API_KEY } from '../Config/config';
 
 stripe.init({
@@ -28,8 +27,8 @@ class BookingPolicyScreen extends React.Component {
       travelerId: this.props.userProfile.profile.userId,
       guideFacebookId: this.props.profileSelection.selectedProfile.user.facebook_id,
       city: this.props.search.city,
-      startHr: 9,
-      endHr: 17,
+      startDateHr: `${this.props.search.date}, ${this.props.search.fromHour}:00`,
+      endDateHr: `${this.props.search.date}, ${this.props.search.toHour}:00`,
       date: this.props.search.date
     };
     
@@ -43,8 +42,6 @@ class BookingPolicyScreen extends React.Component {
   }
 
   navigateToConfirmation() {
-    // create axios call to create a booking
-    
     this.bookTour();
     this.props.navigation.navigate('BookingConfirmation');
   }
@@ -78,7 +75,7 @@ class BookingPolicyScreen extends React.Component {
           token,
         });
 
-        this.props.navigation.navigate('BookingConfirmation');
+        this.navigateToConfirmation();
       } catch (error) {
         console.log('ERROR', error);
         this.setState({

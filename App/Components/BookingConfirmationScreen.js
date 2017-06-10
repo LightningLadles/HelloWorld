@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import {
-  Card, Button, Icon, Grid, Row, Divider
+  Card, Button, Divider
 } from 'react-native-elements';
 import { NavigationActions } from 'react-navigation';
 
@@ -11,7 +11,6 @@ class BookingConfirmationScreen extends React.Component {
   constructor(props) {
     super(props);
     this.navigateToExplore = this.navigateToExplore.bind(this);
-
   }
 
   navigateToExplore() {
@@ -57,7 +56,7 @@ class BookingConfirmationScreen extends React.Component {
             {this.props.search.date}
           </Text>
           <Text style={{marginBottom: 10}}>
-            {this.props.search.hours}
+            {this.props.search.fromHour} / {this.props.search.toHour}
           </Text>
           <Button
             small

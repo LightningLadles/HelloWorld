@@ -121,7 +121,7 @@ class GuideTripsScreen extends React.Component {
                 Date & Time
               </Text>
               <Text>
-                {booking.date.slice(0, 10)} | {booking.start_hr}:00-{booking.end_hr}:00
+                {new Date(booking.start_date_hr).toDateString()} | {new Date(booking.start_date_hr).getHours()}:00-{new Date(booking.end_date_hr).getHours()}:00
               </Text>
               <Text style={styles.subheader}>
                 Status

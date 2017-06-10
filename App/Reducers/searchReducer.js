@@ -1,8 +1,6 @@
 export default function reducer(state = {
   city: 'SF',
-  date: '2017-10-10',
-  // date: new Date(Date.now()).toJSON().slice(0,10).replace(/-/g,'-'),
-  hours: '',
+  date: new Date().toDateString(),
   fromHour: 0,
   toHour: 0,
   numTravelers: 1,
@@ -22,8 +20,6 @@ export default function reducer(state = {
     return {...state, city: action.payload}
   } else if (action.type === 'UPDATE_DATE') {
     return {...state, date: action.payload}
-  // } else if (action.type === 'UPDATE_HOURS_FULFILLED') {
-  //   return {...state, hours: action.payload}
   } else if (action.type === 'UPDATE_TRAVELERS_FULFILLED') {
     return {...state, numTravelers: action.payload}
   } else if (action.type === 'UPDATE_SEARCH_RESULTS_FULFILLED') {

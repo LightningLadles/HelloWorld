@@ -44,13 +44,13 @@ class GuideProfileScreen extends React.Component {
             title={`Rating: ${this.props.profileSelection.selectedProfile.avg_rating}/5.0 (${this.props.profileSelection.selectedProfile.rating_count})`}
           />
           <Text style={styles.subheader}>
+            Introduction
+          </Text>
+          <Text style={styles.intro}>
+            {this.props.profileSelection.selectedProfile.availabilities[0].intro}
+          </Text>
+          <Text style={styles.intro}>
             {this.props.profileSelection.selectedProfile.availabilities[0].statement}
-          </Text>
-          <Text style={styles.intro}>
-            {this.props.profileSelection.selectedProfile.intro}
-          </Text>
-          <Text style={styles.intro}>
-            {this.props.profileSelection.selectedProfile.statement}
           </Text>
           <Divider />
           <Text style={styles.subheader}>

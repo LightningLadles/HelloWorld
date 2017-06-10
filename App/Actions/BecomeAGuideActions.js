@@ -12,17 +12,17 @@ export function becomeGuideDate(date) {
   };
 }
 
-export function becomeGuideStart(startTime) {
+export function becomeGuideFromHour(fromHour) {
   return {
-      type: 'BECOME_GUIDE_START',
-      payload: startTime
+      type: 'BECOME_GUIDE_FROM_HOUR',
+      payload: fromHour
   };
 }
 
-export function becomeGuideEnd(endTime) {
+export function becomeGuideToHour(toHour) {
   return {
-      type: 'BECOME_GUIDE_END',
-      payload: endTime
+      type: 'BECOME_GUIDE_TO_HOUR',
+      payload: toHour
   };
 }
 
