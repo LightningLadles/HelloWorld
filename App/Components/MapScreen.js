@@ -65,14 +65,10 @@ class MapScreen extends React.Component {
   componentWillMount() {
     axios.get(`/api/events/booking/${this.props.navigation.state.params.bookingId}`)
     .then(event => {
-      // console.log('event info from db', event);
       let eventsCoordinates = event.data.map(booking => {
         return {
-          // coordinates: {
             longitude: Number(booking.latitude),
             latitude: Number(booking.longitude),
-          // },
-          // eventName: booking.event_name
         }
       });
       this.setState({
